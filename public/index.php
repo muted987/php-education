@@ -1,3 +1,3 @@
 <?php
 
-echo 'Eto test dude';
+echo 'wsws';

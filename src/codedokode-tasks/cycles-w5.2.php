@@ -4,9 +4,9 @@ $deposite = 10_000;
 $age = 16;
 $count = 0;
 $percent = 1.1;
-$required_amount = 1_000_000;
+$requiredAmount = 1_000_000;
 
-while ($deposite <= $required_amount) {
+while ($deposite <= $requiredAmount) {
     $deposite *= $percent;
     $count++;
 }

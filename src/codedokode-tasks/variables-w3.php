@@ -1,7 +1,10 @@
 <?php
 
-error_reporting(-1);
+use Random\RandomException;
 
-echo "Бросаем кубик...\n";
-$random = random_int(1, 6);
-echo "Выпал $random\n";
+echo 'Бросаем кубик...' . PHP_EOL;
+try {
+    $random = random_int(1, 6);
+} catch (RandomException $e) {
+}
+echo 'Выпало ' . $random . "\n";

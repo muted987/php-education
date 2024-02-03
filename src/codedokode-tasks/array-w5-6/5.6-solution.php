@@ -21,10 +21,10 @@ $letters = [
     'ру'
 ];
 $name = '';
-
+$arrLength = count($letters) - 1;
 for ($i = 1; $i <= 4; $i++) {
     try {
-        $random = random_int(0, count($letters) - 1);
+        $random = random_int(0, $arrLength);
     } catch (RandomException $e) {
     }
     $randomText = $letters[$random];
@@ -33,4 +33,4 @@ for ($i = 1; $i <= 4; $i++) {
 }
 
 echo "------\n";
-echo 'Советую имя: ' . $name . ' - не прогадаешь!' . PHP_EOL;
+echo 'Советую имя: ' . mb_convert_case($name, 2) . ' - не прогадаешь!' . PHP_EOL;

@@ -1,13 +1,15 @@
 <?php
 
-$creditSum = 39999;
-$monthPayment = 5000;
-$bankPercent = 1.03;
-$bankComission = 1000;
-$count = 0;
-while ($creditSum > 0) {
-    $creditSum = $creditSum * $bankPercent + $bankComission;
-    $tempSum = $creditSum;
-    $creditSum -= $monthPayment;
-    echo $creditSum;
+function isIsogram(string $string): bool
+{
+    $arrOfString = str_split(strtolower($string));
+    $stringsCount = count($arrOfString);
+    $arrOfLetters = array_combine($arrOfString, array_fill(0, $stringsCount, 0));
+    foreach ($arrOfString as $letter) {
+        $arrOfLetters[$letter]++;
+    }
+    $lettersCount = count($arrOfString);
+    return $lettersCount === strlen($string);
 }
+
+var_dump(isIsogram('abcde'));
